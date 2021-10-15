@@ -10,21 +10,17 @@
     
 // }
 
-function fibonacci(x) {
-    
-
-const fibNum = [0,1]
+function fibonacci(x) {  
 let sum1=0,sum2=1,total=0;
-for (let i = 0; total < x; i++) {
+for (let i = 0; i < x; i++) {
     total =sum1+sum2;
     sum1=sum2;
-    sum2=total;
-    fibNum.push(total)   
-    
-}return fibNum
+    sum2=total;     
 }
-
-console.log(fibonacci(50));
+console.log(total) 
+}
+fibonacci(7)
+fibonacci(12)
 
 
 
