@@ -2,6 +2,7 @@
 
 function convert_array(text) {
     console.log(text.split(" "))    
+    console.log(text.split(""))    
 }
 convert_array("Mustafa Örs Nalan Azra ÖRS")
 
@@ -36,3 +37,5 @@ function hideEmail2(mail) {
     return mail.replace(mail.substring(mail.search("@"),3),".....")   
 }
 console.log(hideEmail2("danny_brown@hotmail.com"))
+
+
