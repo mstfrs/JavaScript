@@ -12,9 +12,9 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-     margin-top: 3rem;
+     margin-top: 1rem;
      font-family: 'Montserrat', sans-serif;
-     font-size: 2rem;
+     font-size: 1.7rem;
 }
 input{
     width: 20rem;
@@ -27,7 +27,7 @@ input{
     
     
 }
-button{
+.buttons{
     width: 14rem;
     height: 3rem;
     font-size: 2rem;
@@ -36,10 +36,14 @@ button{
     background-color: chocolate;
     color: white;
     margin: 1rem 0;
+    visibility: visible;
+}
+.buttons2{
+    visibility: hidden;
 }
 #message, #attempt_num, #entered{
     height: 3rem;
-    padding: 3px;
+    padding: 2px;
 }
 #message{
     color: red;

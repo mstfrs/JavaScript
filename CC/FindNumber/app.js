@@ -12,6 +12,7 @@ let estimated=document.getElementById('number');
 let resetButton= document.getElementById('reset-button');
 console.log(estimated.value);
 let entered = document.getElementById("entered");
+resetButton.className="buttons2";
 
 // messageInput.innerText= "_";         
 
@@ -34,9 +35,11 @@ checkButtonId.addEventListener('click', ()=>{
     }
     else {
         messageInput.innerText= `Congratulations, You guessed in ${attemptCounter} attempts`;
-        entered.innerText=`The last number you entered ${estimated.value}`      
+        entered.innerText=`The last number you entered ${estimated.value}`     
 
         document.body.className = "confetti"
+        resetButton.className="buttons";
+
         
 
     } 
@@ -60,6 +63,8 @@ document.body.style.backgroundImage = "url('.')";
 messageInput.innerText= " "; 
 entered.innerText=""  
 document.body.className = "#"
+resetButton.className="buttons2";
+
 
 
 
