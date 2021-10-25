@@ -37,9 +37,12 @@ button{
     color: white;
     margin: 1rem 0;
 }
-#message, #attempt_num{
+#message, #attempt_num, #entered{
     height: 3rem;
     padding: 3px;
+}
+#message{
+    color: red;
 }
 
 #image{

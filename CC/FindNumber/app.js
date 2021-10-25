@@ -11,6 +11,7 @@ let attemptNum = document.getElementById("attempt_num");
 let estimated=document.getElementById('number');
 let resetButton= document.getElementById('reset-button');
 console.log(estimated.value);
+let entered = document.getElementById("entered");
 
 // messageInput.innerText= "_";         
 
@@ -23,13 +24,18 @@ checkButtonId.addEventListener('click', ()=>{
     else{  
         
     if (estimated.value>a) {
-        messageInput.innerText= "Please enter a smaller number...";       
+        messageInput.innerText= "Please enter a smaller number..."; 
+        entered.innerText=`The last number you entered ${estimated.value}`      
     } 
     else if(estimated.value<a) {
-        messageInput.innerText= "Please enter a bigger number...";        
+        messageInput.innerText= "Please enter a bigger number...";  
+        entered.innerText=`The last number you entered ${estimated.value}`      
+      
     }
     else {
         messageInput.innerText= `Congratulations, You guessed in ${attemptCounter} attempts`;
+        entered.innerText=`The last number you entered ${estimated.value}`      
+
         document.body.className = "confetti"
         
 
@@ -51,7 +57,8 @@ estimated.value="";
 
 attemptNum.innerText=attemptCounter;
 document.body.style.backgroundImage = "url('.')";
-messageInput.innerText= " ";   
+messageInput.innerText= " "; 
+entered.innerText=""  
 document.body.className = "#"
 
 
