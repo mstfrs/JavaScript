@@ -57,9 +57,7 @@ resetButton.addEventListener("click", () =>{
 console.log(a);
 attemptCounter=0;
 estimated.value="";
-
 attemptNum.innerText=attemptCounter;
-document.body.style.backgroundImage = "url('.')";
 messageInput.innerText= " "; 
 entered.innerText=""  
 document.body.className = "#"
