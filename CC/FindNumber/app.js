@@ -55,9 +55,9 @@ attemptNum.innerText=attemptCounter ++;
 resetButton.addEventListener("click", () =>{
     a = Math.floor(Math.random() * 100);
 console.log(a);
-attemptCounter=0;
+attemptCounter=1;
 estimated.value="";
-attemptNum.innerText=attemptCounter;
+attemptNum.innerText="";
 messageInput.innerText= " "; 
 entered.innerText=""  
 document.body.className = "#"
