@@ -1,6 +1,3 @@
-var bagPrice= 25.98;
-var shoePrice= 45.98;
-var clockPrice= 74.98;
 var quantity= document.getElementById("product-quantity")
 var plusQty= document.getElementsByClassName("fas fa-plus"); 
 var minusQty= document.getElementsByClassName("fas fa-minus"); 
@@ -8,11 +5,13 @@ var quantityControl= document.getElementsByClassName("quantity-controller")
 var productTotalPrice= document.getElementsByClassName("product-line-price")
 var productPrice=document.getElementsByClassName("product-price")
 var subTotal= document.getElementById("cart-subtotal")
-var productInfo =document.getElementsByClassName("")
+var taxTotal =document.getElementById("cart-tax")
+var totalPrice =document.getElementById("cart-total")
+var shipping = document.getElementById("cart-shipping")
+var rmvButton = document.getElementsByClassName("remove-product")
 
 
-// console.log(productTotalPrice);
-// console.log(productPrice.children);
+
 
     /// ****Plus quantity*****************
 
@@ -25,21 +24,17 @@ var productInfo =document.getElementsByClassName("")
             if (quantity.innerText >= 0) {
                 let productTotalPrice = e.target.parentElement.parentElement.parentElement.children[4];
                 let productPrice= e.target.parentElement.parentElement.parentElement.children[1].children[0].children[0];  
-                productTotalPrice.innerText=productPrice.innerText * quantity.innerText
+                productTotalPrice.innerText=(productPrice.innerText * quantity.innerText).toFixed(2)
                 
                 
-                subTotal.children[1].innerText  =   (Number (subTotal.children[1].innerText) + Number(productPrice.innerText)).toFixed(2)
+                subTotal.children[1].innerText  =   (Number (subTotal.children[1].innerText) + Number(productPrice.innerText)).toFixed(2);
+                
+                taxTotal.children[1].innerText  =   (Number (subTotal.children[1].innerText) *0.18).toFixed(2);
+
+                totalPrice.children[1].innerText  =   (Number (subTotal.children[1].innerText) +Number (shipping.children[1].innerText)+ Number(taxTotal.children[1].innerText)).toFixed(2)
                 
              
-            // for (let i = 0; i< quantityControl.length; i++){
-
-
-                   
-                
-
-            //     console.log(productTotalPrice.parentElement.parentElement);
-            //     // subTotal.children[1].innerText  =   subTotal.children[1].innerText + quantity[i].innerText   
-            // }
+         
         }
             
         })    
@@ -55,40 +50,29 @@ var productInfo =document.getElementsByClassName("")
             if (quantity.innerText >= 0) {
                 let productTotalPrice = e.target.parentElement.parentElement.parentElement.children[4];
                 let productPrice= e.target.parentElement.parentElement.parentElement.children[1].children[0].children[0];  
-                productTotalPrice.innerText=productPrice.innerText * quantity.innerText
+                productTotalPrice.innerText=(productPrice.innerText * quantity.innerText).toFixed(2);
                 subTotal.children[1].innerText  =   (Number (subTotal.children[1].innerText) - Number(productPrice.innerText)).toFixed(2)
+
+                taxTotal.children[1].innerText  =   (Number (subTotal.children[1].innerText) *0.18).toFixed(2);
+
+                totalPrice.children[1].innerText  =   (Number (subTotal.children[1].innerText) +Number (shipping.children[1].innerText)+ Number(taxTotal.children[1].innerText)).toFixed(2)
+
+            
                 
 
             }  
         }
              
             })    
-        }   
-
-
-        /// ****sum product total *****************
-
+        }  
         
+            /// ****Remove Product*****************
 
-        // for (var x = 0; x < productPrice.length; x++) {
-        //         if (quantity.innerText != 0) {
-        //             console.log(productTotalPrice.innerText);
-
+for (let i = 0; i < rmvButton.length; i++) {
+    rmvButton[i].addEventListener("click", function(e){
+        e.target.parentElement.parentElement.parentElement.remove();
     
-        //         }               
-            //  console.log(e.target);
-                              
-            //     productPrice[x].innerText =  1
-            
-            // })    
-        // }   
+})
 
-
-
-// function plus() {
-//     var plusQty= document.getElementsByClassName("fas fa-plus"); 
-//     var quantity= document.getElementById("product-quantity")
-//     var quantityControl= document.getElementsByClassName("quantity-controller")
-    
-// }
-
+}
+        
