@@ -4,7 +4,7 @@ let side3Value = document.getElementById("#side3");
 var calcBtn = document.querySelector("button");
 let result = document.querySelector("#result");
 
-console.log(result);
+// console.log(result);
 
 calcBtn.addEventListener("click", () => {
   if (isNaN(side1.value) || isNaN(side2.value) || isNaN(side3.value)) {
