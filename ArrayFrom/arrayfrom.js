@@ -7,9 +7,9 @@
 // !Example-1 (char array from string)
 // !-----------------------------------------------------------
 
-const msg = "Hello World";
-const msgArray = Array.from(msg);
-console.log(msgArray);
+// const msg = "Hello World";
+// const msgArray = Array.from(msg);
+// console.log(msgArray);
 
 // !Example-2 (array from sets)
 // !-----------------------------------------------------------
@@ -36,5 +36,5 @@ console.log(answerArr);
 // !Example-4 (array with map function)
 // !-----------------------------------------------------------
 
-const square = Array.from([1, 2, 3], (x) => x * x);
-console.log(square);
+// const square = Array.from([1, 2, 3], (x) => x * x);
+// console.log(square);

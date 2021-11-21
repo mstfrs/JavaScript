@@ -43,12 +43,23 @@ console.log(doubled);
 // Beliritilen dizideki isimleri büyük harfe çevirerek bir dizide
 // uygulamayı yazınızuygulamayı map() metodu ile yazınız.
 //----------------------------------------------------------------
-
+const namesArr = ["mustafa", "ali", "mehmet", "veli", "mustafa"];
+const uppered = namesArr.map((x) => x.toUpperCase());
+console.log(uppered);
+const upperedSet = new Set(uppered);
+console.log(upperedSet);
 //---------------------------------------------------------------
 // Ürünlerin TL fiyatlarının saklandığı bir dizimiz var. Bu dizideki
 // değerlerin Euro ve Dolar karşılıklarını verilen oranlara göre
 // hesaplayarak ayrı dizilere saklayan uygulamayı map() ile yazınız
 //----------------------------------------------------------------
+const priceArr = [250, 320, 150, 180];
+let euro = 13;
+let dolar = 12;
+const euroCon = priceArr.map((x) => (x / euro).toFixed(2));
+const dolarCon = priceArr.map((x) => (x / dolar).toFixed(2));
+console.log(euroCon);
+console.log(dolarCon);
 
 //---------------------------------------------------------------
 // tlFiyatlar dizidekisindeki ürünlere zam yapılmak isteniyor.
@@ -57,3 +68,17 @@ console.log(doubled);
 // Ayrıca, zamlı olan yeni değerleri
 // New Price of Product 1 : 110 TL şekilde diziye saklamak istiyoruz.
 //----------------------------------------------------------------
+
+const prices = [120, 90, 70, 150, 200];
+
+const tenPerc = prices.map((value, indis) => {
+  if (value < 100) {
+    // value + value * 0.15;
+    return `New Price of Product ${indis + 1}: ${(value * 1.15).toFixed(2)}`;
+  } else {
+    // value + value * 0.1;
+    return `New Price of Product ${indis + 1}: ${(value * 1.1).toFixed(2)}`;
+  }
+});
+
+console.log(tenPerc);
