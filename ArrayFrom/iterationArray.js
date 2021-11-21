@@ -82,3 +82,99 @@ const tenPerc = prices.map((value, indis) => {
 });
 
 console.log(tenPerc);
+
+// =======================================================
+//                       FILTER
+// =======================================================
+
+// filter() metodu bir dizideki elemanları istediğimiz kritere
+// göre flitreleyerek seçmek için kullanabilriz.
+
+//---------------------------------------------------------------
+// koordinatlar dizisindeki negatif koordinatları alıp
+// yeni bir diziye saklayan uygulamayı filter() ile yapınız.
+//----------------------------------------------------------------
+
+const coords = [-100, 150, -32, 43, -20];
+negatives = coords.filter((c) => c < 0);
+console.log(negatives);
+
+// =======================================================
+//           FILTER,FOREACH,MAP BERABER KULLANIMI
+// =======================================================
+// Dizi iterasyon metotları ardı ardına kullanılabilir.
+// Böylelikle ardaşık bir şekilde gelip veriler işlenebilir.
+
+//---------------------------------------------------------------
+// koordinatlar dizisindeki negatif koordinatları seçerek bunları
+// pozitife çevirip konsola bastıran uygulamayı yazınız.
+//----------------------------------------------------------------
+
+coords
+  .filter((c) => c < 0)
+  .map((c) => c * -1)
+  .forEach((c) => console.log(c));
+
+//---------------------------------------------------------------
+// Bireyler disindeki kişilerden Adı "Belirtilen" harf ile başlayanları
+// seçerek ayrı bir diziye saklayan uygulamayı yazınız.
+//----------------------------------------------------------------
+
+const people = ["Mustafa", "Murat", "Kerime", "Ayşe", "Can"];
+
+const selectedByFirstLetter = function (letter) {
+  const bigLetter = letter.toUpperCase();
+  const filteredNames = people.filter((n) => n.startsWith(bigLetter));
+  if (!filteredNames.length) {
+    return "people is not found";
+  } else {
+    return filteredNames;
+  }
+};
+
+console.log(selectedByFirstLetter("m"));
+console.log(selectedByFirstLetter("M"));
+console.log(selectedByFirstLetter("a"));
+
+//---------------------------------------------------------------
+// Aşağıdaki formata göre bireyler dizisindeki her bir elemanın
+// uzunluğunu sıralı olarak yazdıran uygulamayı yazınız.
+//  Can: 3
+//  Ayşe: 4
+//  Murat: 5  v.b.
+//---------------------------------------------------------------
+
+// =======================================================
+//                   REDUCE KULLANIMI
+// =======================================================
+// reduce metodunu diziden tek bir değer elde etmek için kullanırız.
+// Örneğin dizinin toplam değeri gibi.
+// reduce(toplam, şuankideğer, indeks, dizi) şeklinde dört adet parametre
+// alabilir. Bunlardan ilk ikisi zorunludur.
+
+//---------------------------------------------------------------
+// Koordinatlar dizisindeki değerlerin toplamını hesaplayarak
+// konsola bastıran uygulamayı reduce() ile yazınız.
+//----------------------------------------------------------------
+
+//const coords = [-100, 150, -32, 43, -20];
+
+console.log(coords.reduce((x, y) => x + y));
+console.log(coords.reduce((x, y) => x + y) / coords.length);
+
+// =======================================================
+//             FILTER,MAP,REDUCE BERABER KULLANIMI
+// =======================================================
+//---------------------------------------------------------------
+// Firma, 3000 TL den az olan maaşlara %10 zam yapmak istiyor
+// ve zam yapılan bu kişilere toplam kaç TL ödeneceğini bilmek
+// istiyor. İlgili programı yazınız.
+//----------------------------------------------------------------
+
+const salaries = [3000, 2891, 3500, 4200, 7000, 2500];
+
+const sumOfRaisedSalaries = salaries
+  .filter((s) => s < 3000)
+  .map((s) => s * 1.1)
+  .reduce((acc, val) => acc + val);
+console.log(sumOfRaisedSalaries);
