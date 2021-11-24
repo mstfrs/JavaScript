@@ -3,7 +3,11 @@ var result = document.getElementById("result");
 const numberTyped = document.querySelector("input");
 
 calcBtn.addEventListener("click", () => {
-  if (numberTyped.value >= 4000 || numberTyped.value == "") {
+  if (
+    numberTyped.value >= 4000 ||
+    numberTyped.value == "" ||
+    isNaN(numberTyped.value)
+  ) {
     result.innerText = "Please type a number between 1-3999";
     numberTyped.value = "";
   } else {
