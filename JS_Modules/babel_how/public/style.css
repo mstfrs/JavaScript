@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+}
+.footer {
+  width: 100%;
+  height: 600px;
+  text-align: center;
+}
+.section {
+  height: 1500px;
+}
